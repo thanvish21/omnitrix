@@ -6,6 +6,8 @@ Styled after [pixtuoid](https://www.npmjs.com/package/pixtuoid): omnitrix watche
 
 ## Install
 
+Requires Node.js 18+.
+
 ```bash
 git clone https://github.com/thanvish21/omnitrix.git
 cd omnitrix
@@ -27,6 +29,8 @@ omnitrix watch --loop       # live-summarize detected agent sessions
 omnitrix --help
 ```
 
+Typo in a theme id? `theme set` suggests the nearest match (`Did you mean xlr8?`) and exits non-zero.
+
 ## Themes
 
 | Group | Count | Examples |
@@ -34,10 +38,12 @@ omnitrix --help
 | `ben10-aliens`    | 53 | Heatblast, XLR8, Diamondhead, Big Chill, Alien X, Way Big, Rath… |
 | `ben10-humans`    | 5  | Ben, Gwen, Kevin, Grandpa Max, Rook |
 | `ben10-villains`  | 10 | Vilgax, Hex, Charmcaster, Albedo, Zs'Skayr… |
-| `cartoon-network` | 20 | Adventure Time, Steven Universe, Samurai Jack, The Owl House… |
+| `cartoon-network` | 20 | Adventure Time, Steven Universe, Samurai Jack, Regular Show… |
 | `anime`           | 14 | Naruto, DBZ, One Piece, Demon Slayer, JJK, Chainsaw Man… |
 
 Each theme exposes color tokens: `primary`, `secondary`, `accent`, `background`, `text`, `border`, `success`, `error`, `warning`.
+
+Run `omnitrix theme list` for the full list — every theme with its id, glyph, and a live color-swatch preview.
 
 ## Agent watching
 
@@ -47,11 +53,19 @@ Each theme exposes color tokens: `primary`, `secondary`, `accent`, `background`,
 - **Codex** — `~/.codex/sessions/**`
 - **OpenCode** — `~/.local/share/opencode/**`, `~/.opencode/**`
 
-A session is `busy` if touched in the last 60s, else `idle`. omnitrix never writes to or controls these agents — it only observes.
+A session is `busy` if touched in the last 60s, else `idle`. With `--loop` it re-scans every second and prints only when something changes. omnitrix never writes to or controls these agents — it only observes.
 
 ## Config
 
 Selected theme persists to `~/.config/omnitrix/config.toml`.
+
+## Development
+
+```bash
+npm run dev         # run from source via tsx (no build step)
+npm run typecheck   # tsc --noEmit
+npm run build       # emit dist/
+```
 
 ## Tech
 

@@ -44,6 +44,7 @@ export async function themeSet(id: string): Promise<void> {
       console.error(chalk.gray(`  Did you mean ${chalk.hex("#50fa7b")(suggestion)}?`));
     }
     console.error(chalk.gray(`  Run ${chalk.bold("omnitrix theme list")} to see all themes.`));
+    process.exitCode = 1;
     return;
   }
   setTheme(theme.id);

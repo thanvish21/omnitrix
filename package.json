@@ -12,6 +12,10 @@
     "typecheck": "tsc --noEmit"
   },
   "keywords": ["ben10", "omnitrix", "tui", "cli", "themes", "anime", "cartoon-network", "claude-code"],
+  "repository": { "type": "git", "url": "git+https://github.com/thanvish21/omnitrix.git" },
+  "homepage": "https://github.com/thanvish21/omnitrix#readme",
+  "bugs": { "url": "https://github.com/thanvish21/omnitrix/issues" },
+  "files": ["dist", "README.md", "LICENSE"],
   "license": "MIT",
   "dependencies": {
     "@iarna/toml": "^2.2.5",

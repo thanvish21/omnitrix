@@ -76,6 +76,7 @@ async function run(argv: string[]): Promise<void> {
         const id = rest[0];
         if (!id) {
           console.error(chalk.hex("#ff5555")("✖ Usage: omnitrix theme set <id>"));
+          process.exitCode = 1;
           return;
         }
         return themeSet(id);
